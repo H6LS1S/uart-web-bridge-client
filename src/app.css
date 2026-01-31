@@ -1,0 +1,25 @@
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+}
+
+select {
+	outline: none;
+}
+
+input,
+textarea {
+	@apply w-full pl-2;
+
+	outline: none;
+	appearance: none;
+}
+
+code {
+	@apply row-span-10 overflow-x-auto p-2 whitespace-pre-wrap;
+}
