@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 
 import { viteSingleFile } from 'vite-plugin-singlefile';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
+import compression from 'vite-plugin-compression';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -36,7 +37,8 @@ export default defineConfig({
 	plugins: [
 		svelte({ compilerOptions: { css: 'external' } }),
 		tailwindcss(),
-		viteSingleFile({ removeViteModuleLoader: true })
+		viteSingleFile({ removeViteModuleLoader: true }),
+		compression()
 	],
 
 	build: {
