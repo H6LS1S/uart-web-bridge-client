@@ -59,7 +59,7 @@
 	});
 </script>
 
-<header class="flex items-center px-8 pt-4">
+<header class="flex items-center px-8 py-4">
 	<h1 class="text-3xl mr-auto">WebUART:{__APP_VERSION__}</h1>
 
 	<Btn click={changeFirmware} icon={mdiUpload} />
@@ -67,7 +67,9 @@
 	<Btn click={changeWifiMode} icon={mdiWifiCog} hidden={connected} />
 </header>
 
-<main class="container m-auto my-4 grid grid-rows-[auto_1fr] rounded bg-gray-200 dark:bg-black">
+<main
+	class="container mx-auto sm:mb-4 grid grid-rows-[auto_1fr] sm:rounded bg-gray-200 dark:bg-black"
+>
 	<Console />
 </main>
 

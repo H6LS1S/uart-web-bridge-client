@@ -1,11 +1,14 @@
 <script lang="ts">
-	interface Props {
+	import type { HTMLButtonAttributes } from 'svelte/elements';
+
+	interface Props extends HTMLButtonAttributes {
 		click: () => Promise<void>;
 		icon?: string;
+		hidden?: boolean;
 		disabled?: boolean;
 	}
 
-	let { click, icon, disabled = false }: Props = $props();
+	let { click, icon, hidden, disabled = false }: Props = $props();
 
 	const onclick = async () => {
 		disabled = true;
@@ -20,6 +23,7 @@
 <button
 	{onclick}
 	{disabled}
+	{hidden}
 	aria-label="button"
 	class="m-2 p-2 rounded-full hover:bg-black/10 dark:hover:bg-white/10"
 >

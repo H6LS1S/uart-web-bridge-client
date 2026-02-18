@@ -24,8 +24,8 @@ export class ConsoleService extends Array<{ timestamp: number; command: string }
 	 *
 	 */
 	constructor() {
-		const storage = JSON.parse(localStorage.getItem(CONSOLE_KEY) || '[]');
-		super(...storage);
+		localStorage.setItem(CONSOLE_KEY, '');
+		super();
 	}
 
 	/**
